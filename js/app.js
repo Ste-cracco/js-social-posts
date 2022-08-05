@@ -28,15 +28,55 @@ const posts = [
     },    
 ]
 
-const {immagineProfilo, nomeProfilo} = posts
+const arrayPost = []
 
-console.log(immagineProfilo, nomeProfilo)
+for (let i = 0; i < posts.length; i++) {    
+    arrayPost.push(posts[i])
+}
+console.log(arrayPost)
+
+// const {immagineProfilo, nomeProfilo} = posts
+
+// console.log(immagineProfilo, nomeProfilo)
 
 const containerPostEl = document.querySelector('.container_post')
 
-posts.forEach(() => {
+posts.forEach((element) => {
+    const divPostEl = document.createElement('div');
+    divPostEl.classList.add('post')
     const divTitoloPostEl = document.createElement('div');
-    divTitoloPostEl.classList.add('post')
-    divTitoloPostEl.append(immagineProfilo, nomeProfilo)
-    containerPostEl.append(divTitoloPostEl)
+    divTitoloPostEl.classList.add('titolo_post')
+
+    let src = element.immagineProfilo 
+    const imgElement = document.createElement('img');
+	imgElement.src = src
+    const imgProfilo = (`${element.immagineProfilo} `)
+    imgElement.append(imgProfilo)
+    divTitoloPostEl.append(imgElement)
+
+    const nomeProfilo = (`${element.nomeProfilo} `)
+    containerPostEl.append(divPostEl)
+    divPostEl.append(divTitoloPostEl)
+    divTitoloPostEl.append(nomeProfilo)
+    divPostEl.append(divTitoloPostEl)    
+
+    const divContenutoEl = document.createElement('div');
+    divContenutoEl.classList.add('contenuto_post')
+    const contenutoPost = (`${element.contenuto} `)
+    divContenutoEl.append(contenutoPost)
+    divPostEl.append(divContenutoEl)
+   
+
+    let srcPost = element.immagine
+    const divImgPost = document.createElement('img');
+    divImgPost.classList.add('immagine_post')
+    divImgPost.src = srcPost
+    const immaginePost = (`${element.immagine} `)
+    divImgPost.append(immaginePost)
+    divPostEl.append(divImgPost)
+
+
+
+
+  
 })

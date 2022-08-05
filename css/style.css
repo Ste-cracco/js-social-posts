@@ -33,4 +33,19 @@ h1 {
 
 .post {
     background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.titolo_post {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.titolo_post img {
+    width: 45px;
+    border-radius: 100px;
 }
