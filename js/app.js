@@ -11,7 +11,7 @@ const posts = [
     {
         id: 2,
         contenuto : "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        immagine : "https://unsplash.it/600/300?image=171",
+        immagine : "https://unsplash.it/600/300?image=172",
         nomeProfilo : "Marco Zuckembergo",
         immagineProfilo : "https://unsplash.it/300/300?image=15",
         likes : 180,
@@ -20,7 +20,7 @@ const posts = [
     {
         id: 3,
         contenuto : "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        immagine : "https://unsplash.it/600/300?image=171",
+        immagine : "https://unsplash.it/600/300?image=173",
         nomeProfilo : "Antonio Traversone",
         immagineProfilo : "https://unsplash.it/300/300?image=15",
         likes : 122,
@@ -76,8 +76,17 @@ posts.forEach((element) => {
     divImgPost.append(immaginePost)
     divPostEl.append(divImgPost)
 
+    const divLikes = document.createElement('div');
+    divLikes.classList.add('container_likes')
+    const buttonLikes = document.createElement('button')
+    buttonLikes.classList.add('button_likes')
+    const textLikes = document.createElement('span')
 
+    divPostEl.append(divLikes)
+    divLikes.append(buttonLikes)
+    divLikes.append(textLikes)
 
-
+    buttonLikes.innerHTML += "Mi Piace"
+    textLikes.innerHTML += `Piace a ${element.likes}`
   
 })
