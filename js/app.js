@@ -58,7 +58,8 @@ posts.forEach((element) => {
     containerPostEl.append(divPostEl)
     divPostEl.append(divTitoloPostEl)
     divTitoloPostEl.append(nomeProfilo)
-    divPostEl.append(divTitoloPostEl)    
+    divPostEl.append(divTitoloPostEl)
+    
 
     const divContenutoEl = document.createElement('div');
     divContenutoEl.classList.add('contenuto_post')
